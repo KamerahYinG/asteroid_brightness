@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "asteroid-brightness"
+version = "0.2.0"
+description = "Asteroid V-band brightness with H-G12 and optional JPL Horizons geometry"
+readme = "asteroid_brightness/README.md"
+requires-python = ">=3.10"
+dependencies = ["numpy", "scipy", "astropy", "sbpy", "astroquery"]
+
+[project.optional-dependencies]
+plot = ["matplotlib"]
+spice = ["spiceypy", "requests"]
+
+[tool.setuptools.packages.find]
+include = ["asteroid_brightness*"]
+exclude = ["asteroid_brightness.tests*", "asteroid_brightness.outputs*"]
